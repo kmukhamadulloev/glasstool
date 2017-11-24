@@ -1,0 +1,41 @@
+﻿<Window x:Class="GlassTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GlassTool"
+        mc:Ignorable="d"
+        Title="GlassTool" Height="100" Width="190" ResizeMode="NoResize" WindowStartupLocation="Manual" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" AllowsTransparency="True" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="appWindow.png">
+            <ImageBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ImageBrush.RelativeTransform>
+        </ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Button x:Name="play" Margin="63,0,0,0" Style="{DynamicResource GS}" HorizontalAlignment="Left" Width="64" Height="64" VerticalAlignment="Top" Background="White" Click="play_Click">
+            <Image x:Name="image" Height="32" Width="32" Source="appPlay.png"/>
+        </Button>
+        <Button x:Name="next" HorizontalAlignment="Left" Margin="132,8,0,0" VerticalAlignment="Top" Width="48" Style="{DynamicResource GS}" Height="48" Click="next_Click">
+            <Image x:Name="image2" Height="20" Width="20" Source="appNext.png"/>
+        </Button>
+        <Button x:Name="prev" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="48" Style="{DynamicResource GS}" Height="48" Click="prev_Click">
+            <Image x:Name="image1" Height="20" Width="20" Source="appPrev.png"/>
+        </Button>
+        <Button x:Name="list" HorizontalAlignment="Left" Margin="43,0,0,16" VerticalAlignment="Bottom" Width="34" Style="{DynamicResource GS}" Height="34" Click="list_Click">
+            <Image x:Name="image3" Height="18" Width="18" Source="appSetDir.png"/>
+        </Button>
+        <Button x:Name="appClose" Margin="0,0,43,16" VerticalAlignment="Bottom" Style="{DynamicResource GS}" Height="34" HorizontalAlignment="Right" Width="34" Click="appClose_Click">
+            <Image x:Name="image4" Height="20" Width="20" Source="appClose.png"/>
+        </Button>
+    </Grid>
+</Window>
